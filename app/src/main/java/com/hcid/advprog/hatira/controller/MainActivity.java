@@ -50,11 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             getWindow().setExitTransition(null);
         }
 
-
-        //create transition animation
-        imageView = (ImageView) findViewById(R.id.image_activity);
-        //imageView.setImageResource(R.drawable.cat3);
-        //Button loadButton = findViewById(R.id.load);
         Button next = findViewById(R.id.nxt_button);
 
        // loadButton.setOnClickListener(this);
@@ -101,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;*/
             case R.id.nxt_button:
                 Toast.makeText(this, "Button 2 clicked", Toast.LENGTH_SHORT).show();
-                Intent in = new Intent(MainActivity.this, Photo.class);
+                Intent in = new Intent(MainActivity.this, AlbumGrid.class);
                 ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imageView, ViewCompat.getTransitionName(imageView));
                 startActivity(in,options.toBundle());
                 break;

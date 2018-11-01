@@ -22,4 +22,6 @@ public abstract class Album {
     public interface OnChangeListener {
         void onChange();
     }
+
+
 }
