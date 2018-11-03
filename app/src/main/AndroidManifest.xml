@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".controller.MainActivity"
             android:windowSoftInputMode="adjustNothing|stateHidden">
             <intent-filter>
@@ -18,7 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.Photo"></activity>
+        <activity android:name=".controller.AlbumGrid"></activity>
+        <activity android:name=".controller.Photo">
+            <intent-filter>
+                <action android:name=".controller.Photo" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

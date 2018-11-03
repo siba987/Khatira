@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/fam_tree">
 
     <ImageView
         android:id="@+id/imageView1"
@@ -12,7 +13,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="44dp"
         android:layout_marginTop="33dp"
-        app:srcCompat="@drawable/funny_cat" />
+        android:transitionName="ex_transition"
+        app:srcCompat="@drawable/cat3" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -60,6 +62,16 @@
         android:layout_marginTop="49dp"
         android:layout_marginBottom="56dp"
         app:srcCompat="@drawable/adorable_cat" />
+
+    <ImageButton
+        android:id="@+id/cat_imgBtn"
+        android:layout_width="212dp"
+        android:layout_height="153dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="39dp"
+        app:srcCompat="@drawable/cat_album" />
 
 
 </RelativeLayout>

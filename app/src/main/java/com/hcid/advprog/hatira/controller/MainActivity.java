@@ -10,6 +10,7 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,6 +24,7 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     ImageView imageView;
+    private static final String TAG = "MainActivity";
     private static final int REQUEST_OPEN_RESULT_CODE = 0;
     private static final int MY_PERMISSION_REQUEST = 1;
 
@@ -30,19 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); //equivalent to setting view
-
         setTitle("Activity 1");
-        /*//for smoother transitions
-        Fade fade = new Fade();
-        View decor = getWindow().getDecorView();
-        //this excludes transition and action bar from this transition
-        fade.excludeTarget(decor.findViewById(R.id.action_bar_container), true);
-        fade.excludeTarget(android.R.id.statusBarBackground, true);
-        fade.excludeTarget(android.R.id.navigationBarBackground, true);
-
-        //set Enter and Exit transition
-        getWindow().setEnterTransition(fade);
-        getWindow().setExitTransition(fade);*/
+        Log.d(TAG, "onCreate: Starting");
 
         //set Enter and Exit transition
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -95,10 +86,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivityForResult(intent, REQUEST_OPEN_RESULT_CODE);
                 break;*/
             case R.id.nxt_button:
-                Toast.makeText(this, "Button 2 clicked", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "Button 2 clicked", Toast.LENGTH_SHORT).show();
                 Intent in = new Intent(MainActivity.this, AlbumGrid.class);
-                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imageView, ViewCompat.getTransitionName(imageView));
-                startActivity(in,options.toBundle());
+                //ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, imageView, ViewCompat.getTransitionName(imageView));
+                //startActivity(in,options.toBundle());
+                startActivity(in);
                 break;
         }
     }

@@ -3,12 +3,15 @@ package com.hcid.advprog.hatira.controller;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.support.v4.view.GestureDetectorCompat;
 
 import com.hcid.advprog.hatira.R;
 import com.hcid.advprog.hatira.model.PhotoModel;
 import com.hcid.advprog.hatira.model.UserModel;
 
-public class Photo extends AppCompatActivity {
+public class Photo extends AppCompatActivity  {
     private PhotoModel photoModel;
 
     //constructor, or does it get added to the onCreate method?
